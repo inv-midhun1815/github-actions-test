@@ -27,3 +27,21 @@ jobs:
               run: |
                 chmod +x ./test_script.sh
                 ./test_script.sh
+            
+            - name: upload artifact file
+              uses: actions/upload-artifact@v4
+              with:
+                name: out-file
+                path: out.txt
+    
+    another-job:
+        needs: explore-github-actions
+        runs-on: ubuntu-latest
+        steps:
+            - name: download artifact file
+              uses: action/download-artifact@v4
+              with:
+                name: out-file
+
+            - name: Read Contents
+              run: cat out.txt
