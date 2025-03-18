@@ -1,6 +1,9 @@
 name: test_workflow_1
 
-on: push
+on: 
+  push: 
+    branches: 
+      - main
 
 env:
   WORKFLOW_MESSAGE: This is a workflow level env
