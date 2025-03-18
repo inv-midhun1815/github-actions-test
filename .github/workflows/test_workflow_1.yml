@@ -6,6 +6,9 @@ jobs:
     explore-github-actions:
         runs-on: ubuntu-latest
         steps:
-            - run: echo "First Workflow!!!"
-            - uses: actions/checkout@v4
-            - run: ls -la
+            - name: Greet Msg
+              run: echo "First Workflow!!!"
+            - name: Checkout Repo
+              uses: actions/checkout@v4
+            - name: Listing Files
+              run: ls -la
