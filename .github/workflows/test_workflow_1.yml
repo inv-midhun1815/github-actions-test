@@ -8,4 +8,4 @@ jobs:
         steps:
             - run: echo "First Workflow!!!"
             - run: echo "Testing push events"
-            - run: echo "test2"
+            - run: echo "test3"
