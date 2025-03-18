@@ -12,8 +12,13 @@ jobs:
             - name: Checkout Repo
               uses: actions/checkout@v4
 
-            - name: Listing Files
-              run: ls -la
+            # - name: Listing Files
+            #   run: ls -la
             
-            - name: Reading Content
-              run: cat .github/workflows/test_workflow_1.yml
+            # - name: Reading Content
+            #   run: cat .github/workflows/test_workflow_1.yml
+
+            - name : Multiline Script
+              run: |
+                ls -la
+                cat .github/workflows/test_workflow_1.yml
