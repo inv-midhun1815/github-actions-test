@@ -8,7 +8,12 @@ jobs:
         steps:
             - name: Greet Msg
               run: echo "First Workflow!!!"
+
             - name: Checkout Repo
               uses: actions/checkout@v4
+
             - name: Listing Files
               run: ls -la
+            
+            - name: Reading Content
+              run: cat .github/workflows/test_workflow_1.yml
