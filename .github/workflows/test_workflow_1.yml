@@ -22,3 +22,5 @@ jobs:
               run: |
                 ls -la
                 cat .github/workflows/test_workflow_1.yml
+            - name: Script Run from Repo Root
+              run: ./test_script.sh
