@@ -58,3 +58,6 @@ jobs:
             
             - name: Print Workflow level env
               run: echo ${{ env.WORKFLOW_MESSAGE }}
+
+            - name: Print Repository level Variable and Secret
+              run: echo ${{ secrets.TEST_REPOSITORY_SECRET }} and ${{ vars.TEST_REPOSITORY_VARIABLE }}
