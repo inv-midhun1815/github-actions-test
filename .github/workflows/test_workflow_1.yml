@@ -2,12 +2,21 @@ name: test_workflow_1
 
 on: push
 
+env:
+  WORKFLOW_MESSAGE: This is a workflow level env
+
 jobs: 
     explore-github-actions:
+        env:
+          JOB_MESSAGE: "This is a job level env"
         runs-on: ubuntu-latest
         steps:
             - name: Greet Msg
-              run: echo "First Workflow!!!"
+              env:
+                MESSAGE: "First Workflow"
+              run: |
+                echo "${{ env.MESSAGE }}!!!"  #env at step level
+                echo ${{ env.JOB_MESSAGE }}
 
             - name: Checkout Repo
               uses: actions/checkout@v4
@@ -22,6 +31,7 @@ jobs:
               run: |
                 ls -la
                 cat .github/workflows/test_workflow_1.yml
+                echo ${{ env.JOB_MESSAGE }}
 
             - name: Script Run from Repo Root
               run: |
@@ -45,3 +55,6 @@ jobs:
 
             - name: Read Contents
               run: cat out.txt
+            
+            - name: Print Workflow level env
+              run: echo ${{ env.WORKFLOW_MESSAGE }}
