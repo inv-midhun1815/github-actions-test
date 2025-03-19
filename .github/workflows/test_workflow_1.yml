@@ -67,6 +67,7 @@ jobs:
         runs-on: ubuntu-latest
         concurrency: 
           group: group-1
+        timeout-minutes: 1
         steps:
             - name: download artifact file
               uses: actions/download-artifact@v4
@@ -83,4 +84,5 @@ jobs:
               run: echo ${{ secrets.TEST_REPOSITORY_SECRET }} and ${{ vars.TEST_REPOSITORY_VARIABLE }}
 
             - name: long running job for concurrency
-              run: sleep 120
+              timeout-minutes: 1
+              run: sleep 60
