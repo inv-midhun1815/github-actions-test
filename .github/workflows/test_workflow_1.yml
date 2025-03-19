@@ -84,5 +84,4 @@ jobs:
               run: echo ${{ secrets.TEST_REPOSITORY_SECRET }} and ${{ vars.TEST_REPOSITORY_VARIABLE }}
 
             - name: long running job for concurrency
-              timeout-minutes: 1
               run: sleep 60
