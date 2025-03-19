@@ -81,3 +81,6 @@ jobs:
 
             - name: Print Repository level Variable and Secret
               run: echo ${{ secrets.TEST_REPOSITORY_SECRET }} and ${{ vars.TEST_REPOSITORY_VARIABLE }}
+
+            - name: long running job for concurrency
+              run: sleep 120
