@@ -15,10 +15,10 @@ on:
           - info
           - warning
           - debug
-      environment:
-        description: 'Environment to run tests against'
-        type: environment
-        required: true
+      # environment:
+      #   description: 'Environment to run tests against'
+      #   type: environment
+      #   required: true
 
 env:
   WORKFLOW_MESSAGE: This is a workflow level env
