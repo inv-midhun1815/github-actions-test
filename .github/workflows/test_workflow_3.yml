@@ -1,0 +1,22 @@
+name: Github Actions Learning
+
+on:
+    push: 
+        branches: 
+            - actions_learn
+    workflow_dispatch: 
+
+jobs:
+    deploy-app:
+        strategy:
+            matrix:
+                os: [ubuntu-latest, ubuntu-22.04, windows-latest]
+                images: [hello-world, alpine]
+        runs-on: ${{ matrix.os }}
+        timeout-minutes: 2
+        steps:
+            - name: Docker Details
+              run: docker info
+
+            - name: Deploy ${{ matrix.images }}
+              run: docker run ${{ matrix.images }}
