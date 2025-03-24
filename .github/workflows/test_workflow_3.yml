@@ -26,10 +26,10 @@ jobs:
         timeout-minutes: 2
         steps:
             - name: Docker Details
-              run: docker info
+              run: echo "docker info"
 
             - name: Deploy ${{ matrix.images }}
-              run: docker run ${{ matrix.images }}
+              run: echo "docker run ${{ matrix.images }}"
             
             - name: Display Context
               run: echo "${{ toJson(github) }}"
